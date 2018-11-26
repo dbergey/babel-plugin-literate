@@ -1,0 +1,45 @@
+{
+	"name": "babel-plugin-literate",
+	"version": "0.0.1",
+	"main": "lib/index.js",
+	"license": "MIT",
+	"scripts": {
+		"test": "jest"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.1.6",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-jest": "^23.6.0",
+		"jest": "^23.6.0"
+	},
+	"dependencies": {
+		"@babel/cli": "^7.1.5",
+		"@babel/parser": "^7.1.6",
+		"markdown-it": "^8.4.2"
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"js",
+			"jsx",
+			"js.md",
+			"jsx.md"
+		],
+		"testMatch": [
+			"<rootDir>/tests/*.js",
+			"<rootDir>/tests/*.js.md"
+		],
+		"transform": {
+			"^.+\\.jsx?(.md)?$": "babel-jest"
+		}
+	},
+	"prettier": {
+		"singleQuote": true,
+		"semicolons": true,
+		"trailingComma": "es5"
+	},
+	"babel": {
+		"plugins": [
+			"./lib/index.js"
+		]
+	}
+}
