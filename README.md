@@ -15,6 +15,21 @@ module.exports = {
 };
 ```
 
+## Usage with `@babel/node`
+
+```console
+$ babel-node --extensions .md mytestfile.js.md
+```
+
+## Usage with `@babel/register`
+
+```js
+// main.js
+require('@babel/register')({
+	extensions: ['.md'],
+});
+```
+
 ## Related
 
 - [Literate ES Webpack Loader](https://github.com/ndp-software/literate-es-webpack-loader)
