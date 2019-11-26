@@ -8,9 +8,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "jest",
     "format": "prettier --write **/*.* README.md package.json",
-    "prepare": "npm run test"
+    "test": "npm run format && jest",
+    "prepublishOnly": " npm run test",
+    "publish": "git push --tags"
   },
   "husky": {
     "hooks": {
