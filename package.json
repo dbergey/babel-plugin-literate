@@ -1,58 +1,67 @@
 {
-	"name": "babel-plugin-literate",
-	"version": "0.0.2",
-	"main": "dist/index.js",
-	"contributors": [
-		"Daniel K. Bergey",
-		"Taon Poole <hire@talon.computer> (https://talon.computer)"
-	],
-	"license": "MIT",
-	"scripts": {
-		"test": "jest",
-		"prepare": "npm run test"
-	},
-	"babel": {
-		"presets": [
-			[
-				"@babel/preset-env",
-				{
-					"targets": {
-						"node": "current"
-					}
-				}
-			]
-		],
-		"plugins": [
-			[
-				"./index.js",
-				{
-					"files": "\\.md$"
-				}
-			]
-		]
-	},
-	"jest": {
-		"moduleFileExtensions": [
-			"md",
-			"js",
-			"jsx",
-			"ts",
-			"tsx"
-		],
-		"testRegex": ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$",
-		"transform": {
-			".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$": "babel-jest"
-		}
-	},
-	"devDependencies": {
-		"@babel/core": "^7.7.4",
-		"@babel/preset-env": "^7.7.4",
-		"babel-jest": "^24.9.0",
-		"faker": "^4.1.0",
-		"jest": "^24.9.0",
-		"lodash": "^4.17.15"
-	},
-	"dependencies": {
-		"@babel/helper-plugin-utils": "^7.0.0"
-	}
+  "name": "babel-plugin-literate",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "contributors": [
+    "Daniel K. Bergey",
+    "Taon Poole <hire@talon.computer> (https://talon.computer)"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write **/*.* README.md package.json",
+    "prepare": "npm run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "./index.js",
+        {
+          "files": "\\.md$"
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "md",
+      "js",
+      "jsx",
+      "ts",
+      "tsx"
+    ],
+    "testRegex": ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$",
+    "transform": {
+      ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-jest": "^24.9.0",
+    "faker": "^4.1.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.0.0"
+  }
 }

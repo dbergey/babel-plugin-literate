@@ -1,4 +1,5 @@
 # babel-plugin-literate
+
 > [Literate programming](https://en.wikipedia.org/wiki/Literate_programming) in JavaScript
 
 # Usage
@@ -13,9 +14,12 @@ and add it to `plugins` in your babel config
 {
   "babel": {
     "plugins": [
-      ["babel-plugin-literate", {
-        "files": ".*\\.md$"
-      }]
+      [
+        "babel-plugin-literate",
+        {
+          "files": ".*\\.md$"
+        }
+      ]
     ]
   }
 }
@@ -26,7 +30,7 @@ and add it to `plugins` in your babel config
 ```json
 {
   "jest": {
-    "moduleFileExtensions": [ "md", "js", "ts", "jsx", "tsx" ],
+    "moduleFileExtensions": ["md", "js", "ts", "jsx", "tsx"],
     "transform": {
       ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$": "babel-jest"
     },
@@ -64,12 +68,13 @@ PRs welcome 😉
 # Does it work?
 
 this _very_ README is a literate file tested with `babel-jest`.
+
 > npm run test
 
 ```js
 test("end-to-end integration test", () => {
-  expect(true).toBeTruthy()
-})
+  expect(true).toBeTruthy();
+});
 ```
 
 # Related
