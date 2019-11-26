@@ -6,8 +6,8 @@ module.exports = declare((babel, {files}) => {
   return {
     parserOverride(code, options) {
       return options.sourceFileName.match(files)
-        ? babel.parse(parse(code), {})
-        : babel.parse(code, {})
+        ? babel.parse(parse(code), options)
+        : babel.parse(code, options)
     }
   }
 })
