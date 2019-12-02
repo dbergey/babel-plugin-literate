@@ -1,14 +1,15 @@
 const { declare } = require("@babel/helper-plugin-utils");
+const { dirname } = require("path");
 const parse = require("./lib/parse");
 
 module.exports = declare((babel, { files }) => {
   babel.assertVersion(7);
   return {
     parserOverride(code, options) {
-      console.log(options);
+      const opts = babel.loadOptions();
       return options.sourceFileName.match(files)
-        ? babel.parse(parse(code), options)
-        : babel.parse(code, options);
+        ? babel.parse(parse(code), opts)
+        : babel.parse(code, opts);
     }
   };
 });
