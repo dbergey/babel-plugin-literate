@@ -31,10 +31,10 @@ and add it to `plugins` in your babel config
 {
   "jest": {
     "moduleFileExtensions": ["md", "js", "ts", "jsx", "tsx"],
+    "testRegex": ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$",
     "transform": {
-      ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$": "babel-jest"
-    },
-    "testRegex": ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$"
+      "^.+\\.([jt]sx?|md)$": "babel-jest"
+    }
   }
 }
 ```
@@ -42,7 +42,7 @@ and add it to `plugins` in your babel config
 ### using with @babel/node
 
 ```sh
-babel-node --extensions .md literate.md
+babel-node --extensions ".md,.js" literate.md
 ```
 
 ### using with babel/register

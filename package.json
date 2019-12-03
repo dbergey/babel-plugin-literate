@@ -48,7 +48,7 @@
     ],
     "testRegex": ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$",
     "transform": {
-      ".*(README|\\.(test|spec|usage))\\.([jt]sx?|md)$": "babel-jest"
+      "^.+\\.([jt]sx?|md)$": "babel-jest"
     }
   },
   "devDependencies": {

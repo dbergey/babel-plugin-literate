@@ -7,7 +7,7 @@ module.exports = declare(({ assertVersion }, { files }) => {
   assertVersion(7);
   return {
     parserOverride(code, options) {
-      return options.sourceFileName.match(files)
+      return options.sourceFileName.match(files || /\.md$/)
         ? parse(literate(code), options)
         : parse(code, options);
     }
