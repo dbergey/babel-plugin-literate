@@ -4,6 +4,14 @@
 	"main": "lib/index.js",
 	"author": "Daniel K. Bergey",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dbergey/babel-plugin-literate"
+	},
+	"homepage": "https://github.com/dbergey/babel-plugin-literate",
+	"bugs": {
+		"url": "https://github.com/dbergey/babel-plugin-literate/issues"
+	},
 	"scripts": {
 		"test": "jest"
 	},
